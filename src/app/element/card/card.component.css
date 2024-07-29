@@ -1,0 +1,28 @@
+.box {
+    border: 2px solid #050a44;
+    border-radius: 25px;
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ 
+    padding: 10px 10px;
+    box-sizing: border-box; 
+    width: fit-content;
+    
+}
+
+i {
+    font-size: 100px;
+    border: 2px solid #050a44;
+    border-radius: 25px;
+    padding: 10px 10px;
+    margin: 5px 5px;
+    color: #141619;
+}
+
+p {
+    color: #141619;
+    font-style: italic;
+    font-weight: bold;
+}
