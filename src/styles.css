@@ -1,4 +1,111 @@
 /* You can add global styles to this file, and also import other style files */
 
+/*! colours to be used 
+/* TODO:  #141619 black, #2c2e3a grey, #050a44 dark blue
+/* TODO:  #0a21c0 blue, #b3b4bd light grey, #f1f1fb white
+ */
+
+@font-face {
+  font-family: "Aeonik Trial";
+  src: url("/Fonts/Aeonik-Trial/New\ Aeonik\ Trials/AeonikTRIAL-Regular.otf")
+      format("opentype"),
+    url("/public/Fonts/Aeonik-Trial/__MACOSX/New\ Aeonik\ Trials/._AeonikTRIAL-Regular.otf")
+      format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aeonik Trial";
+  src: url("/Fonts/Aeonik-Trial/New\ Aeonik\ Trials/AeonikTRIAL-RegularItalic.otf")
+      format("opentype"),
+    url("/public/Fonts/Aeonik-Trial/__MACOSX/New\ Aeonik\ Trials/._AeonikTRIAL-RegularItalic.otf")
+      format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Aeonik Trial";
+  src: url("/Fonts/Aeonik-Trial/New\ Aeonik\ Trials/AeonikTRIAL-Light.otf")
+      format("opentype"),
+    url("/public/Fonts/Aeonik-Trial/__MACOSX/New\ Aeonik\ Trials/._AeonikTRIAL-Light.otf")
+      format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aeonik Trial";
+  src: url("/Fonts/Aeonik-Trial/New\ Aeonik\ Trials/AeonikTRIAL-LightItalic.otf")
+      format("opentype"),
+    url("/public/Fonts/Aeonik-Trial/__MACOSX/New\ Aeonik\ Trials/._AeonikTRIAL-LightItalic.otf")
+      format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Aeonik Trial";
+  src: url("/Fonts/Aeonik-Trial/New\ Aeonik\ Trials/AeonikTRIAL-Bold.otf")
+      format("opentype"),
+    url("/public/Fonts/Aeonik-Trial/__MACOSX/New\ Aeonik\ Trials/._AeonikTRIAL-Bold.otf")
+      format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Aeonik Trial";
+  src: url("/Fonts/Aeonik-Trial/New\ Aeonik\ Trials/AeonikTRIAL-BoldItalic.otf")
+      format("opentype"),
+    url("/public/Fonts/Aeonik-Trial/__MACOSX/New\ Aeonik\ Trials/._AeonikTRIAL-BoldItalic.otf")
+      format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+body,
+html {
+  height: 100%; 
+  background-color: #141619;
+  font-family: "Aeonik Trial", sans-serif;
+}
+body {
+   margin: 0;
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+/* WebKit browsers */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #b3b4bd;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #141619;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #050a44;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #141619 #b3b4bd;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
