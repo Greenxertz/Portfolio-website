@@ -1,1 +1,30 @@
-<p>projects works!</p>
+<section class="intro">
+  <h2>So what have i worked on?</h2>
+  <p>
+    Well... as a final year(2024) university student theres alot to do and alot
+    more to think of. But so far.
+  </p>
+</section>
+<div class="cards">
+  <app-showcasecards
+    *ngFor="let project of projects"
+    [imageUrl]="project.imageUrl"
+    [title]="project.title"
+    [desc]="project.desc"
+    [chips]="project.chips"
+  ></app-showcasecards>
+</div>
+
+<div class="construction">
+  <h2>Projects under construction</h2>
+</div>
+
+<div class="cards">
+  <app-showcasecards
+    *ngFor="let project of projects"
+    [imageUrl]="project.imageUrl"
+    [title]="project.title"
+    [desc]="project.desc"
+    [chips]="project.chips"
+  ></app-showcasecards>
+</div>

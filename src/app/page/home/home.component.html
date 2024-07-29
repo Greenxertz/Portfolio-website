@@ -1,1 +1,35 @@
-<p>home works!</p>
+<section class="intro">
+<div class="image-container">
+    <img src="/Images/Pictures/labelpic.jpg" alt="">
+</div>
+    <div class="container">
+        <h2>Hi, <br>I'm Marco Teixeira</h2>
+        <h1>I'm a Software Engineer</h1>
+        <p>I'm passionate about my craft and always try to think outside the box.</p>
+    </div>
+
+</section>
+
+<section class="content">
+    <div class="title">
+        <h2 class="animated-text">The Tools in my Toolkit:</h2>
+    </div>
+
+    <div class="card-container">
+        <app-card *ngFor="let tool of tools" [iconUrl]="tool.iconUrl" [title]="tool.title"></app-card>
+    </div>
+    <div class="title">
+        <h2 class="animated-text">The Frameworks in my Toolkit:</h2>
+    </div>
+    <div class="card-container">
+        <app-card *ngFor="let framework of frameworks" [iconUrl]="framework.iconUrl" [title]="framework.title"></app-card>
+    </div>
+
+    <div class="title">
+        <h2 class="animated-text">My Tools outside of Developement:</h2>
+    </div>
+    <div class="card-container">
+        <app-card *ngFor="let hobby of hobbies" [iconUrl]="hobby.iconUrl" [title]="hobby.title"></app-card>
+    </div>
+
+</section>
