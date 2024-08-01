@@ -1,20 +1,19 @@
-<div class="col" ontouchstart="this.classList.toggle('hover');">
-  <div class="container">
-    <div class="front" [ngStyle]="{ 'background-image': 'url(' + imageUrl + ')' }">
-      <div class="inner">
-        <h2>{{ title }}</h2>
-        <span>iyguig</span>
-      </div>
-    </div>
-    <div class="back">
-      <div class="inner">
-        <h2>{{ desc }}</h2>
-        <mat-chip-set>
-          <mat-basic-chip *ngFor="let chip of chips" class="custom-chip">
-            <i class="{{ chip }}"></i>
-          </mat-basic-chip>
-        </mat-chip-set>
-      </div>
+
+ <a href="#" class="view-all">
+<div class="container" href="">
+  <div
+    class="image"
+    [ngStyle]="{ 'background-image': 'url(' + imageUrl + ')' }"
+  ></div>
+  <div class="content">
+  <h2>{{title}}</h2>
+  <p>{{desc}}</p>
+    <div class="tags">
+      <mat-basic-chip *ngFor="let chip of chips" class="custom-chip">
+        <i class="{{ chip }}"></i>
+      </mat-basic-chip>
     </div>
   </div>
+  <div class="click"></div>
 </div>
+</a>

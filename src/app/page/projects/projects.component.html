@@ -1,30 +1,36 @@
 <section class="intro">
-  <h2>So what have i worked on?</h2>
-  <p>
-    Well... as a final year(2024) university student theres alot to do and alot
-    more to think of. But so far.
-  </p>
+  <h2>So what have I worked on?</h2>
+  <p>Some projects completed, and some under construction.</p>
 </section>
-<div class="cards">
-  <app-showcasecards
-    *ngFor="let project of projects"
-    [imageUrl]="project.imageUrl"
-    [title]="project.title"
-    [desc]="project.desc"
-    [chips]="project.chips"
-  ></app-showcasecards>
-</div>
 
-<div class="construction">
-  <h2>Projects under construction</h2>
-</div>
+<section class="recent-projects">
+  <h2>Recent projects</h2>
+  <!-- <div class="cards"></div>
 
-<div class="cards">
-  <app-showcasecards
-    *ngFor="let project of projects"
-    [imageUrl]="project.imageUrl"
-    [title]="project.title"
-    [desc]="project.desc"
-    [chips]="project.chips"
-  ></app-showcasecards>
-</div>
+  <div class="construction">
+    <h2>Some projects under construction</h2>
+  </div>
+
+  <div class="cards">
+    <app-showcasecards
+      *ngFor="let prototype of prototypes"
+      [imageUrl]="prototype.imageUrl"
+      [title]="prototype.title"
+      [desc]="prototype.desc"
+      [chips]="prototype.chips"
+    ></app-showcasecards>
+  </div> -->
+</section>
+<section class="recent-projects">
+  <h2>Recent projects</h2>
+  <div class="projects-container">
+    <app-showcasecards
+      *ngFor="let project of projects"
+      [imageUrl]="project.imageUrl"
+      [title]="project.title"
+      [desc]="project.desc"
+      [chips]="project.chips"
+    ></app-showcasecards>
+  </div>
+ 
+</section>
