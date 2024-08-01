@@ -21,10 +21,10 @@ export class ProjectsComponent {
         'fa-solid fa-gear',
         'devicon-docker-plain',
       ],
+      projectUrl: 'https://github.com/Dario-Maselli/WebDevEssentials',
     },
     {
-      imageUrl:
-        'https://ih1.redbubble.net/image.2480982209.7657/st,small,507x507-pad,600x600,f8f8f8.u2.jpg',
+      imageUrl: '/Images/Pictures/tukkiestools.png',
       title: 'Tukkies Tools',
       desc: 'Ecommerce website project',
       chips: [
@@ -34,10 +34,10 @@ export class ProjectsComponent {
         'devicon-javascript-plain',
         'devicon-html5-plain-wordmark',
       ],
+      projectUrl: 'https://github.com/Dario-Maselli/WebDevEssentials',
     },
     {
-      imageUrl:
-        'https://ih1.redbubble.net/image.2480982209.7657/st,small,507x507-pad,600x600,f8f8f8.u2.jpg',
+      imageUrl: '/Images/Pictures/portfolio.png',
       title: 'Portfolio website',
       desc: 'The website you are currently on',
       chips: [
@@ -47,8 +47,17 @@ export class ProjectsComponent {
         'devicon-angularmaterial-plain',
         'devicon-angular-plain',
       ],
+      projectUrl: 'https://github.com/Dario-Maselli/WebDevEssentials',
+    },
+    {
+      imageUrl: '/Images/Pictures/Github.png',
+      title: 'WebDevEssentials',
+      desc: 'The open source repo for quick links to some really amazing websites to help you with your web development.',
+      chips: [],
+      projectUrl: 'https://github.com/Dario-Maselli/WebDevEssentials',
     },
   ];
+
   prototypes = [
     {
       imageUrl:
@@ -60,6 +69,7 @@ export class ProjectsComponent {
         'fa-solid fa-gear',
         'devicon-docker-plain',
       ],
+      projectUrl: 'https://github.com/Dario-Maselli/WebDevEssentials',
     },
     {
       imageUrl:
@@ -73,6 +83,7 @@ export class ProjectsComponent {
         'devicon-javascript-plain',
         'devicon-html5-plain-wordmark',
       ],
+      projectUrl: 'https://github.com/Dario-Maselli/WebDevEssentials',
     },
     {
       imageUrl:
@@ -86,6 +97,7 @@ export class ProjectsComponent {
         'devicon-angularmaterial-plain',
         'devicon-angular-plain',
       ],
+      projectUrl: 'https://github.com/Dario-Maselli/WebDevEssentials',
     },
   ];
 }

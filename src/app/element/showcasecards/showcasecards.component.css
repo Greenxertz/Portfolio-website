@@ -16,16 +16,15 @@ a {
   box-sizing: border-box;
   overflow: hidden;
   perspective: 1000px;
-  transition: box-shadow 0.5s ease; 
+  transition: box-shadow 0.5s ease;
   box-shadow: green 0px 0px 20px -8px;
-
+  max-width: 400px;
 }
 
 .container:hover {
-  box-shadow: 0 0 20px green; 
+  box-shadow: 0 0 20px green;
   cursor: pointer;
 }
-
 
 .image {
   height: 150px;
@@ -35,9 +34,9 @@ a {
   background-size: cover;
   border-radius: 1rem 0px;
   transform: rotateY(30deg) rotateX(20deg);
-  transition: transform 0.5s ease, box-shadow 0.5s ease; 
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
   box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
-
+  flex-shrink: 0;
 }
 
 .container:hover .image {
@@ -54,9 +53,9 @@ a {
   transform: scaleY(-1);
   background-position: bottom;
   background-size: cover;
-    border-radius: 1rem 0px;
+  border-radius: 1rem 0px;
   opacity: 0.5;
-   transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
 }
 
 .image::before {
@@ -66,9 +65,8 @@ a {
   position: absolute;
   bottom: -42%;
   z-index: 1;
-   /* transition: transform 0.5s ease; */
 }
-.container:hover .image::after ,
+.container:hover .image::after,
 .container:hover .image::before {
   transform: scale(0);
 }
@@ -76,7 +74,7 @@ a {
 .content {
   margin-left: 20px;
   color: white;
-  flex-grow: 1;
+  flex-shrink: 1;
 }
 
 h2 {
@@ -87,11 +85,15 @@ h2 {
 p {
   margin: 10px 0;
   font-size: 1rem;
+    flex-shrink: 1;
 }
 
 .tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
+  flex-shrink: 1;
+  margin-right: 5px;
 }
 
 .custom-chip {
@@ -104,16 +106,17 @@ p {
   color: #141619;
   font-size: 1.5rem;
   height: 30px;
+  flex-shrink: 1;
 }
 
 .custom-chip i {
   margin: 0;
   line-height: 30px;
-  transition: color 1s ease; 
+  transition: color 1s ease;
 }
 
 .container:hover .custom-chip i {
-  color: green; 
+  color: green;
 }
 
 .click {
@@ -125,9 +128,9 @@ p {
   border-left: 10px solid green;
   border-right: 10px solid green;
   border-top: 10px solid green;
-  transition: transform 0.5s ease; 
+  transition: transform 0.5s ease;
 }
 
 .container:hover .click {
-  transform: translateX(1000px); 
+  transform: translateX(1000px);
 }

@@ -203,7 +203,7 @@
     height: 30px;
     border-radius: 50%;
     box-shadow: 0 0 0 4px green, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
-    background: #050a44;
+    background: #141619;
 }
 
 @media only screen and (min-width: 1170px) {
@@ -220,7 +220,7 @@
     position: relative;
     margin-left: 60px;
     margin-right: 30px;
-    background: #2c2e3a;
+    background: #141619;
     border-radius: 10px;
     padding: 1em;
     border: green solid 2px;
@@ -254,7 +254,8 @@
     height: 0;
     width: 0;
     border: 7px solid transparent;
-    border-right: 7px solid #2c2e3a;
+    border-right: 7px solid green
+    ;
     
 }
 
@@ -281,7 +282,7 @@
         top: 24px;
         left: 100%;
         border-color: transparent;
-        border-left-color: #2c2e3a;
+        border-left-color: green;
     }
     .info-block:nth-child(even) .info-content {
         float: right;
@@ -291,6 +292,6 @@
         left: auto;
         right: 100%;
         border-color: transparent;
-        border-right-color: #2c2e3a;
+        border-right-color: green;
     }
 }
