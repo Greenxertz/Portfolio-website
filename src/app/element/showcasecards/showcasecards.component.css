@@ -16,8 +16,9 @@ a {
   box-sizing: border-box;
   overflow: hidden;
   perspective: 1000px;
-  animation: breath 3s ease infinite;
   transition: box-shadow 0.5s ease; 
+  box-shadow: green 0px 0px 20px -8px;
+
 }
 
 .container:hover {
@@ -25,17 +26,6 @@ a {
   cursor: pointer;
 }
 
-@keyframes breath {
-  0% {
-    box-shadow: green 0px 0px 20px -8px;
-  }
-  50% {
-    box-shadow: #141619 0px 0px 20px -8px;
-  }
-  100% {
-    box-shadow: green 0px 0px 20px -8px;
-  }
-}
 
 .image {
   height: 150px;

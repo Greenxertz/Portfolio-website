@@ -15,3 +15,24 @@
   flex-direction: column;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content h2 {
+  font-size: 40px;
+  text-decoration:  underline;
+  border: 2px solid green;
+  padding: 10px;
+  border-radius: 50px;
+
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
