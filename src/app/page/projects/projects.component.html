@@ -12,6 +12,7 @@
       [title]="project.title"
       [desc]="project.desc"
       [chips]="project.chips"
+      (click)="goToProjectDetail(project.id)"
     ></app-showcasecards>
   </div>
 </section>
@@ -25,6 +26,7 @@
       [title]="prototype.title"
       [desc]="prototype.desc"
       [chips]="prototype.chips"
+      (click)="goToProjectDetail(prototype.id)"
     ></app-showcasecards> 
   </div>
  

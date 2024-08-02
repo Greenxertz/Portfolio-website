@@ -1,1 +1,26 @@
-<p>projectpage works!</p>
+<section *ngIf="project" class="content">
+  <div class="image-container">
+    <div class="carousel">
+      <div class="carousel__wrapper">
+        <div *ngFor="let image of images; let i = index" class="carousel__item" [style.transform]="getTransform(i)">
+          <img [src]="image" alt="Carousel Image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="details">
+    <div class="btn">
+      <button>Github</button>
+      <button>External link</button>
+    </div>
+    <h2>{{ project.title }}</h2>
+    <p>{{ project.desc }}</p>
+    <h2>The tools used in this project:</h2>
+    <div class="tags">
+      <mat-basic-chip *ngFor="let chip of project.chips" class="custom-chip">
+        <i class="{{ chip }}"></i>
+      </mat-basic-chip>
+    </div>
+  </div>
+</section>
