@@ -15,6 +15,7 @@ import { MatChipsModule } from '@angular/material/chips';
 export class ProjectPageComponent implements OnInit {
   project: any;
   images: string[] = [];
+  currentSlide = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,9 +30,21 @@ export class ProjectPageComponent implements OnInit {
     }
   }
 
-  getTransform(index: number): string {
-    const numImages = this.images.length;
-    const angle = 360 / numImages;
-    return `rotateY(${index * angle}deg) translateZ(150px)`;
+  prevSlide() {
+    this.currentSlide =
+      this.currentSlide > 0
+        ? this.currentSlide - 1
+        : this.project.images.length - 1;
+  }
+
+  nextSlide() {
+    this.currentSlide =
+      this.currentSlide < this.project.images.length - 1
+        ? this.currentSlide + 1
+        : 0;
+  }
+
+  goToSlide(index: number) {
+    this.currentSlide = index;
   }
 }

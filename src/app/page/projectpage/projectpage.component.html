@@ -1,11 +1,21 @@
 <section *ngIf="project" class="content">
-  <div class="image-container">
-    <div class="carousel">
-      <div class="carousel__wrapper">
-        <div *ngFor="let image of images; let i = index" class="carousel__item" [style.transform]="getTransform(i)">
-          <img [src]="image" alt="Carousel Image">
-        </div>
+  <div class="slider-wrapper">
+    <button class="nav left" (click)="prevSlide()">&#10094;</button>
+    
+    <div class="slider" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
+      <div *ngFor="let image of project.images; let i = index" class="image-container">
+        <img [src]="image" alt="{{ image }}" />
       </div>
+    </div>
+
+    <button class="nav right" (click)="nextSlide()">&#10095;</button>
+    <div class="dots">
+      <span
+        *ngFor="let image of project.images; let i = index"
+        class="dot"
+        [class.active]="i === currentSlide"
+        (click)="goToSlide(i)"
+      ></span>
     </div>
   </div>
 
