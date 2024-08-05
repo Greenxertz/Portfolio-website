@@ -1,9 +1,19 @@
 <section *ngIf="project" class="content">
+  <div class="back-container" (click)="return()">
+    <a class="btn"> <i class="fa-solid fa-chevron-left"></i> Return </a>
+  </div>
+
   <div class="slider-wrapper">
     <button class="nav left" (click)="prevSlide()">&#10094;</button>
-    
-    <div class="slider" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
-      <div *ngFor="let image of project.images; let i = index" class="image-container">
+
+    <div
+      class="slider"
+      [style.transform]="'translateX(-' + currentSlide * 100 + '%)'"
+    >
+      <div
+        *ngFor="let image of project.images; let i = index"
+        class="image-container"
+      >
         <img [src]="image" alt="{{ image }}" />
       </div>
     </div>
@@ -20,17 +30,40 @@
   </div>
 
   <div class="details">
-    <div class="btn">
-      <button>Github</button>
-      <button>External link</button>
+    <div class="btn-container">
+      <div *ngFor="let url of project.projectUrls">
+        <div *ngIf="url.includes('github')">
+          <a
+            href="{{ url }}"
+            class="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="devicon-github-original"></i> GitHub Repo</a
+          >
+        </div>
+        <div *ngIf="!url.includes('github')">
+          <a
+            href="{{ url }}"
+            class="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Have a look
+            at it in action</a
+          >
+        </div>
+      </div>
     </div>
-    <h2>{{ project.title }}</h2>
-    <p>{{ project.desc }}</p>
-    <h2>The tools used in this project:</h2>
-    <div class="tags">
-      <mat-basic-chip *ngFor="let chip of project.chips" class="custom-chip">
-        <i class="{{ chip }}"></i>
-      </mat-basic-chip>
+    <h2 class="title-text">{{ project.title }}</h2>
+    <p class="p-text">{{ project.desc }}</p>
+    <div *ngIf="project.chips && project.chips.length > 0" class="tools">
+      <h2>The tools used in this project:</h2>
+      <div class="tags">
+        <mat-basic-chip *ngFor="let chip of project.chips" class="custom-chip">
+          <i class="{{ chip }}"></i>
+        </mat-basic-chip>
+      </div>
     </div>
   </div>
 </section>

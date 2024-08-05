@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { ProjectsService } from '../../service/projects.service';
 import { CommonModule } from '@angular/common';
 import { MatChipsModule } from '@angular/material/chips';
-
 
 @Component({
   selector: 'app-projectpage',
@@ -16,9 +15,11 @@ export class ProjectPageComponent implements OnInit {
   project: any;
   images: string[] = [];
   currentSlide = 0;
+  previousScrollPosition = 0;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private projectsService: ProjectsService
   ) {}
 
@@ -27,6 +28,9 @@ export class ProjectPageComponent implements OnInit {
     this.project = this.projectsService.getProjectById(projectId);
     if (this.project) {
       this.images = this.project.images;
+    }
+    if (history.state && history.state.scrollPosition !== undefined) {
+      this.previousScrollPosition = history.state.scrollPosition;
     }
   }
 
@@ -46,5 +50,11 @@ export class ProjectPageComponent implements OnInit {
 
   goToSlide(index: number) {
     this.currentSlide = index;
+  }
+
+  return() {
+    this.router.navigate(['/projects']).then(() => {
+      window.scrollTo(0, this.previousScrollPosition || 0);
+    });
   }
 }

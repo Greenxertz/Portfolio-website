@@ -10,7 +10,7 @@
       *ngFor="let project of projects"
       [imageUrl]="project.imageUrl"
       [title]="project.title"
-      [desc]="project.desc"
+      [summary]="project.summary"
       [chips]="project.chips"
       (click)="goToProjectDetail(project.id)"
     ></app-showcasecards>
@@ -22,7 +22,7 @@
       *ngFor="let prototype of prototypes"
       [imageUrl]="prototype.imageUrl"
       [title]="prototype.title"
-      [desc]="prototype.desc"
+      [summary]="prototype.summary"
       [chips]="prototype.chips"
       (click)="goToProjectDetail(prototype.id)"
     ></app-showcasecards> 

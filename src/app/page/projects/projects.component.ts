@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ShowcasecardsComponent } from '../../element/showcasecards/showcasecards.component';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { ProjectsService } from '../../service/projects.service';
 
 
@@ -27,6 +27,10 @@ export class ProjectsComponent implements OnInit {
   }
 
   goToProjectDetail(projectId: number) {
-    this.router.navigate(['/project', projectId]);
+    const scrollPosition = window.scrollY;
+    const navigationExtras: NavigationExtras = {
+      state: { scrollPosition },
+    };
+    this.router.navigate(['/project', projectId], navigationExtras);
   }
 }

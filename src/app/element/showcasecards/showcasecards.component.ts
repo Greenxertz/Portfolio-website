@@ -14,6 +14,6 @@ import { MatChipsModule } from '@angular/material/chips';
 export class ShowcasecardsComponent {
   @Input() title!: string;
   @Input() imageUrl!: string;
-  @Input() desc!: string;
+  @Input() summary!: string;
   @Input() chips!: string[];
 }
