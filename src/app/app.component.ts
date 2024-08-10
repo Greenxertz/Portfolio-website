@@ -1,11 +1,12 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { MousetrailComponent } from './element/mousetrail/mousetrail.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLinkActive, CommonModule, RouterLink],
+  imports: [RouterOutlet, RouterLinkActive, CommonModule, RouterLink, MousetrailComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

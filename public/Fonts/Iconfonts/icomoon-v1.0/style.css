@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?h5v6z9');
-  src:  url('fonts/icomoon.eot?h5v6z9#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?h5v6z9') format('truetype'),
-    url('fonts/icomoon.woff?h5v6z9') format('woff'),
-    url('fonts/icomoon.svg?h5v6z9#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?7zdg19');
+  src:  url('fonts/icomoon.eot?7zdg19#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?7zdg19') format('truetype'),
+    url('fonts/icomoon.woff?7zdg19') format('woff'),
+    url('fonts/icomoon.svg?7zdg19#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -13,6 +13,7 @@
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -32,4 +33,7 @@
 }
 .icon-delphi-svgrepo-com:before {
   content: "\e900";
+}
+.icon-google:before {
+  content: "\ea88";
 }

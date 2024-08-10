@@ -1,0 +1,15 @@
+svg.trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+svg.trail path {
+    fill: none;
+    stroke: green;
+    stroke-width: 4px ;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+      filter: blur(2px);
+}
