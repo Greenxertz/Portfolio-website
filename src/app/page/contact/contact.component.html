@@ -1,69 +1,58 @@
 <section class="Contact-page">
-<h2>Want to connect or leave a message?</h2>
+  <h2>Want to connect or leave a message?</h2>
   <div class="container">
-    
-
     <div class="contact-container">
-      <form action="" class="form-container">
-        <table class="form-field" cellspacing="0">
-          <tr>
-            <td>
-              <mat-form-field class="form-field">
-                <mat-label>First name</mat-label>
-                <input matInput />
-              </mat-form-field>
-            </td>
-            <td>
-              <mat-form-field class="form-field">
-                <mat-label>Last Name</mat-label>
-                <input matInput />
-              </mat-form-field>
-            </td>
-          </tr>
-        </table>
+      <form class="form-container" (ngSubmit)="onSubmit($event)">
+        <mat-form-field class="form-field">
+          <mat-label>First Name</mat-label>
+          <input
+            matInput
+            [formControl]="nameFormControl"
+            placeholder="First name"
+          />
+        </mat-form-field>
 
         <mat-form-field class="form-field">
           <mat-label>Email</mat-label>
           <input
-            type="email"
             matInput
             [formControl]="emailFormControl"
             placeholder="Ex. Max@example.com"
           />
-          @if (emailFormControl.hasError('email') &&
-          !emailFormControl.hasError('required')) {
-          <mat-error>Please enter a valid email address</mat-error>
-          } @if (emailFormControl.hasError('required')) {
-          <mat-error>Email is <strong>required</strong></mat-error>
-          }
-        </mat-form-field>
-
-        <mat-form-field class="form-field">
-          <mat-label>Message Title</mat-label>
-          <input
-            matInput
-            #Title
-            maxlength="100"
-            placeholder="Ex. Possible Hiring"
-          />
-          <mat-hint align="end" class="hint"
-            >{{ Title.value.length }} / 100</mat-hint
+          <mat-error
+            *ngIf="
+              emailFormControl.hasError('email') &&
+              !emailFormControl.hasError('required')
+            "
           >
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field class="form-field">
           <mat-label>Message</mat-label>
           <textarea
             matInput
-            #message
+            [formControl]="messageFormControl"
             maxlength="256"
-            placeholder="Ex. Heres a role you might like at my company"
+            placeholder="Ex. Your message here"
           ></textarea>
-          <mat-hint align="end" class="hint"
-            >{{ message.value.length }} / 256</mat-hint
-          >
+          <mat-hint align="end">
+            {{ (messageFormControl.value?.length ?? 0) }} / 256
+          </mat-hint>
         </mat-form-field>
-        <button type="submit" class="btn-submit">Submit</button>
+
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="btn-submit"
+        >
+          Submit
+        </button>
       </form>
     </div>
 
@@ -76,24 +65,24 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i class="devicon-github-original"></i> Github</a
-      >
+        <i class="devicon-github-original"></i> Github
+      </a>
       <a
         href="mailto:marcotexiera308@gmail.com"
         class="btn"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i class="icon-google"></i> Gmail</a
-      >
+        <i class="icon-google"></i> Gmail
+      </a>
       <a
         href="https://www.linkedin.com/in/marcoteixeira308/"
         class="btn"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i class="devicon-linkedin-plain"></i> LinkeIn</a
-      >
+        <i class="devicon-linkedin-plain"></i> LinkedIn
+      </a>
     </div>
   </div>
 </section>
