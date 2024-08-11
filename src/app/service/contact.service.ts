@@ -1,22 +1,26 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContactService {
-  private apiUrl = 'https://greenxertz.co.za/send_email.php'; 
+  private apiUrl = 'https://greenxertz.co.za/send_email.php';
 
   constructor(private http: HttpClient) {}
-
-  sendMessage(name: string, email: string, message: string): Observable<any> {
+  sendMessage(
+    name: string,
+    email: string,
+    message: string,
+    subject: string
+  ): Observable<any> {
     const body = new URLSearchParams({
       name,
       email,
       message,
-      to_email: 'marcotexiera308@gmail.com',
-      subject: `Message from ${name}`,
+      subject,
+      to_email: 'marcoteixeira308@gmail.com',
     }).toString();
 
     return this.http.post(this.apiUrl, body, {

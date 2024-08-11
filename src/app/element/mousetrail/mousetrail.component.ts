@@ -1,11 +1,18 @@
-import { AfterViewInit, Component, HostListener } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  HostListener,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-mousetrail',
   standalone: true,
   imports: [],
   templateUrl: './mousetrail.component.html',
-  styleUrl: './mousetrail.component.css',
+  styleUrls: ['./mousetrail.component.css'],
 })
 export class MousetrailComponent implements AfterViewInit {
   points: { x: number; y: number }[] = [];
@@ -14,13 +21,17 @@ export class MousetrailComponent implements AfterViewInit {
   svg!: SVGElement;
   path!: SVGPathElement;
 
-  ngAfterViewInit() {
-    this.svg = document.querySelector('svg.trail') as SVGElement;
-    this.path = this.svg.querySelector('path') as SVGPathElement;
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-    this.initPoints();
-    this.anim();
-    this.resize();
+  ngAfterViewInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.svg = document.querySelector('svg.trail') as SVGElement;
+      this.path = this.svg.querySelector('path') as SVGPathElement;
+
+      this.initPoints();
+      this.anim();
+      this.resize();
+    }
   }
 
   initPoints() {
@@ -68,11 +79,13 @@ export class MousetrailComponent implements AfterViewInit {
 
   @HostListener('window:resize')
   resize() {
-    const ww = window.innerWidth;
-    const wh = window.innerHeight;
+    if (isPlatformBrowser(this.platformId)) {
+      const ww = window.innerWidth;
+      const wh = window.innerHeight;
 
-    this.svg.style.width = `${ww}px`;
-    this.svg.style.height = `${wh}px`;
-    this.svg.setAttribute('viewBox', `0 0 ${ww} ${wh}`);
+      this.svg.style.width = `${ww}px`;
+      this.svg.style.height = `${wh}px`;
+      this.svg.setAttribute('viewBox', `0 0 ${ww} ${wh}`);
+    }
   }
 }
