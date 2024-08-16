@@ -108,6 +108,8 @@ html {
 }
 
 html,
-body {
+body, .general-cursor {
+  cursor: url('/Images/Pictures/black-dot.svg') 5 5, move;
   height: 100%;
 }
+

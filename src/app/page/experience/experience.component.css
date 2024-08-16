@@ -1,89 +1,126 @@
-* {
-  color: #b3b4bd;
+.experience {
+  margin: auto;
+  max-width: 90%;
+  display: flex;
+  align-items: flex-start;
+  height: 90%;
+  justify-content:left;
 }
 
-/* Styling */
-.timeline {
-  margin: 4em auto;
+#progress-bar-container {
+  display: flex;
   position: relative;
-  max-width: 46em;
-list-style: none;
-
-}
-
-.timeline:before {
-  background-color: #141619;
-  content: '';
-  margin-left: -1px;
-  position: absolute;
-  top: 0;
-  left: 2em;
-  width: 2px;
+  width: 200px; 
   height: 100%;
+  margin: 20px;
+  flex-direction: column;
 }
 
-.timeline-event {
+#progress-bar-container ul {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between; 
+  height: 100%; 
+  padding:  0px 5px;
+  margin:  0px 10px;
+  list-style: none;
   position: relative;
-  border-left: #b3b4bd 2px solid;
+  flex:1;
 }
 
-.timeline-event:hover .timeline-event-icon {
-  transform: rotate(-45deg);
-  background-color: green;
-}
-
-.timeline-event:hover .timeline-event-thumbnail {
-  box-shadow: inset 40em 0 0 0 green;
-}
-
-.timeline-event-copy {
-  padding: 2em;
-  position: relative;
-  top: -1.875em;
-  left: 4em;
-  width: 80%;
-}
-
-.timeline-event-copy h3 {
-  font-size: 1.75em;
-}
-
-.timeline-event-copy h4 {
-  font-size: 1.2em;
-  margin-bottom: 1.2em;
-}
-
-.timeline-event-copy strong {
-  font-weight: 700;
-}
-
-.timeline-event-copy p:not(.timeline-event-thumbnail) {
-  padding-bottom: 1.2em;
-}
-
-.timeline-event-icon {
-  transition: transform 0.2s ease-in;
-  transform: rotate(45deg);
-  
-  background-color: #2c2e3a;
-  outline: 10px solid #b3b4bd;
-  display: block;
-  margin: 0.5em 0.5em 0.5em -0.5em;
-  position: absolute;
-  top: 10px;
-  left: -1px;
-  width: 1em;
-  height: 1em;
-}
-
-.timeline-event-thumbnail {
-  transition: box-shadow 0.5s ease-in 0.1s;
+#progress-bar-container li {
   color: #b3b4bd;
-  font-size: 1em;
-  
-  background-color: #2c2e3a;
-  box-shadow: inset 0 0 0 0em #0a21c0;
-  display: inline-block;
-  margin-bottom: 1.2em;
-  padding: 0.25em 1em 0.2em 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all ease 0.5s; 
+  position: relative;
+  width: 130px;
+  left: 5%;  
+  padding-left: 5px;
+}
+
+
+#progress-bar-container li.active{
+  background: linear-gradient(to bottom, green 0%, rgb(0, 71, 0) 100%);
+  border-radius: 0px 25px 25px 0px;
+}
+
+#progress-bar-container li:hover {
+  color: green;
+}
+
+#progress-bar-container img {
+  width: 60px;
+  border-radius: 20px;
+  border: 2px solid green;
+} 
+
+#line {
+  width: 20px;
+  background: #2c2e3a;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  border-radius: 50px;
+  transition: all ease 0.9s;
+  overflow: hidden;
+}
+
+ #line-progress {
+  content: " ";
+  width: 100%;
+  height: 0;
+  background: linear-gradient(to bottom, green 0%, rgb(0, 71, 0) 100%);
+  position: absolute;
+  z-index: 2;
+  border-radius: 50px;
+  transition: all ease 0.9s;
+}
+
+#progress-content-section {
+  width: calc(100% - 500px); 
+  margin: auto ; 
+  background: transparent;
+  border-radius: 4px;
+}
+
+.section-content {
+  padding: 30px 40px;
+  text-align: left;
+}
+
+#progress-content-section .section-content h2 {
+
+  text-transform: uppercase;
+  color: snow;
+  letter-spacing: 1px;
+}
+
+#progress-content-section .section-content p {
+
+  line-height: 1.8em;
+  color: #b3b4bd;
+}
+
+#progress-content-section .section-content {
+  display: none;
+  animation: FadeInUp 2s ease;
+  animation-fill-mode: forwards;
+}
+
+#progress-content-section .section-content.active {
+  display: block;
+}
+
+@keyframes FadeInUp {
+  0% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
