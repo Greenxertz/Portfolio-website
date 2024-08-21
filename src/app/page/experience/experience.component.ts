@@ -63,23 +63,38 @@ export class ExperienceComponent {
 
   progressHeight = 3;
   activeSection = '1';
-
   heightCalc = 100 / this.steps.length;
 
   setProgress(section: string) {
     this.activeSection = section;
     const sectionIndex = this.steps.findIndex((step) => step.id === section);
     this.progressHeight = (sectionIndex / (this.steps.length - 1)) * 100;
-    if (this.progressHeight == 0) this.progressHeight = 3;
+    if (this.progressHeight === 0) this.progressHeight = 3;
   }
 
   @HostListener('wheel', ['$event'])
   onScroll(event: WheelEvent) {
-    event.preventDefault();
-    const delta = Math.sign(event.deltaY);
+   
+    const isAtTop = window.scrollY === 0;
+
+    if (!isAtTop) {
+      return; 
+    }
+
     const currentIndex = this.steps.findIndex(
       (step) => step.id === this.activeSection
     );
+
+ 
+    if (currentIndex === 0 && event.deltaY < 0) {
+      return; 
+    }
+    if (currentIndex === this.steps.length - 1 && event.deltaY > 0) {
+      return; 
+    }
+
+    event.preventDefault(); 
+    const delta = Math.sign(event.deltaY);
     const nextIndex = Math.min(
       Math.max(currentIndex + delta, 0),
       this.steps.length - 1

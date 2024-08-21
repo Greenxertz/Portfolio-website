@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CardComponent } from '../../element/card/card.component';
 
 @Component({
@@ -7,9 +7,9 @@ import { CardComponent } from '../../element/card/card.component';
   standalone: true,
   imports: [CommonModule, CardComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   tools = [
     {
       iconUrl: 'devicon-csharp-plain',
@@ -98,4 +98,32 @@ export class HomeComponent {
       title: 'Adobe Photoshop',
     },
   ];
+
+  ngOnInit() {
+    this.initIntersectionObserver();
+  }
+
+  private initIntersectionObserver() {
+    const options = {
+      root: null, 
+      rootMargin: '0px',
+      threshold: 0.1,  
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const element = entry.target as HTMLElement;
+          element.classList.add('animate');  
+          observer.unobserve(element);  
+        }
+      });
+    }, options);
+
+    const animatedTexts = document.querySelectorAll('.animated-text');
+
+    animatedTexts.forEach((text) => {
+      observer.observe(text);
+    });
+  }
 }

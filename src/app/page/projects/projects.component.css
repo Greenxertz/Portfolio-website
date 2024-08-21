@@ -21,15 +21,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: #141619;
+
 }
 
 .content h2 {
   font-size: 40px;
-  text-decoration:  underline;
+  text-decoration: underline;
   border: 2px solid green;
   padding: 10px;
   border-radius: 50px;
-
 }
 
 .projects-container {

@@ -1,85 +1,87 @@
-<section class="contact-container">
-  <h2>Want to leave a message or check out my other platforms?</h2>
-  <div class="content">
-    <div class="form-container">
-      <form
-        [formGroup]="contactForm"
-        (ngSubmit)="onSubmit()"
-        class="contact-form"
-      >
-        <mat-form-field appearance="outline">
-          <mat-label>Name</mat-label>
-          <input matInput formControlName="name" placeholder="Your name" />
-          <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
-            Name is required.
-          </mat-error>
-        </mat-form-field>
+<section class="contactpage">
+  <section class="contact-container">
+    <h2>Want to leave a message or check out my other platforms?</h2>
+    <div class="content">
+      <div class="form-container">
+        <form
+          [formGroup]="contactForm"
+          (ngSubmit)="onSubmit()"
+          class="contact-form"
+        >
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" placeholder="Your name" />
+            <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
+              Name is required.
+            </mat-error>
+          </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Email</mat-label>
-          <input matInput formControlName="email" placeholder="Your email" />
-          <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
-            Email is required.
-          </mat-error>
-          <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
-            Please enter a valid email address.
-          </mat-error>
-        </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" placeholder="Your email" />
+            <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+              Email is required.
+            </mat-error>
+            <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+              Please enter a valid email address.
+            </mat-error>
+          </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Subject</mat-label>
-          <input matInput formControlName="subject" placeholder="Subject" />
-          <mat-error *ngIf="contactForm.get('subject')?.hasError('required')">
-            Subject is required.
-          </mat-error>
-        </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Subject</mat-label>
+            <input matInput formControlName="subject" placeholder="Subject" />
+            <mat-error *ngIf="contactForm.get('subject')?.hasError('required')">
+              Subject is required.
+            </mat-error>
+          </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Message</mat-label>
-          <textarea
-            matInput
-            formControlName="message"
-            placeholder="Your message"
-            rows="4"
-          ></textarea>
-          <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
-            Message is required.
-          </mat-error>
-        </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Message</mat-label>
+            <textarea
+              matInput
+              formControlName="message"
+              placeholder="Your message"
+              rows="4"
+            ></textarea>
+            <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
+              Message is required.
+            </mat-error>
+          </mat-form-field>
 
-        <button mat-raised-button class="btn" color="primary" type="submit">
-          Send Message
-        </button>
-      </form>
+          <button mat-raised-button class="btn" color="primary" type="submit">
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <div class="bar"></div>
+
+      <div class="links">
+        <a
+          href="https://github.com/Greenxertz"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="devicon-github-original"></i> Github
+        </a>
+        <a
+          href="mailto:marcoteixeira308@gmail.com"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="icon-google"></i> Gmail
+        </a>
+        <a
+          href="https://www.linkedin.com/in/marcoteixeira308/"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="devicon-linkedin-plain"></i> LinkedIn
+        </a>
+      </div>
     </div>
-
-    <div class="bar"></div>
-
-    <div class="links">
-      <a
-        href="https://github.com/Greenxertz"
-        class="btn"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i class="devicon-github-original"></i> Github
-      </a>
-      <a
-        href="mailto:marcoteixeira308@gmail.com"
-        class="btn"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i class="icon-google"></i> Gmail
-      </a>
-      <a
-        href="https://www.linkedin.com/in/marcoteixeira308/"
-        class="btn"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i class="devicon-linkedin-plain"></i> LinkedIn
-      </a>
-    </div>
-  </div>
+  </section>
 </section>

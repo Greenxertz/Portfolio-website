@@ -1,0 +1,3 @@
+create footer 
+create background 
+correct home page animations 

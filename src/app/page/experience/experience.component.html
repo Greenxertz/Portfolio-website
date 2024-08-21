@@ -1,25 +1,37 @@
-<div class="experience">
-  <div id="progress-bar-container" [style.--progress-height.px]="progressHeight">
-    <div id="line">
-      <div id="line-progress" [style.height.%]="progressHeight"></div>
+<section class="experiencepage">
+  <div class="experience">
+    <div
+      id="progress-bar-container"
+      [style.--progress-height.px]="progressHeight"
+    >
+      <div id="line">
+        <div id="line-progress" [style.height.%]="progressHeight"></div>
+      </div>
+      <ul>
+        <li
+          *ngFor="let step of steps"
+          [ngClass]="{ step: true, active: activeSection === step.id }"
+          (click)="setProgress(step.id)"
+        >
+          <img [src]="step.image" alt="" />
+          <div class="step">
+            {{ step.label }} <br />
+            {{ step.date }}
+          </div>
+        </li>
+      </ul>
     </div>
-    <ul>
-      <li *ngFor="let step of steps" 
-          [ngClass]="{ 'step': true, 'active': activeSection === step.id }"
-          (click)="setProgress(step.id)">
-          <img [src]="step.image" alt="">
-        <div class="step">{{ step.label }} <br> {{step.date}}</div>
-      </li>
-    </ul>
-  </div>
 
-  <div id="progress-content-section">
-    <div *ngFor="let step of steps"
-         class="section-content"
-         [ngClass]="step.id"
-         [class.active]="activeSection === step.id">
-      <h2>{{ step.title }}</h2>
-      <p>{{ step.content }}</p>
+    <div id="progress-content-section">
+      <div
+        *ngFor="let step of steps"
+        class="section-content"
+        [ngClass]="step.id"
+        [class.active]="activeSection === step.id"
+      >
+        <h2>{{ step.title }}</h2>
+        <p>{{ step.content }}</p>
+      </div>
     </div>
   </div>
-</div>
+</section>
