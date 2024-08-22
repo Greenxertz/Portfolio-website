@@ -101,21 +101,22 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.initIntersectionObserver();
+    this.changeText();
   }
 
   private initIntersectionObserver() {
     const options = {
-      root: null, 
+      root: null,
       rootMargin: '0px',
-      threshold: 0.1,  
+      threshold: 0.1,
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const element = entry.target as HTMLElement;
-          element.classList.add('animate');  
-          observer.unobserve(element);  
+          element.classList.add('animate');
+          observer.unobserve(element);
         }
       });
     }, options);
@@ -125,5 +126,25 @@ export class HomeComponent implements OnInit {
     animatedTexts.forEach((text) => {
       observer.observe(text);
     });
+  }
+
+  roles = ['Software Engineer', 'Learner', 'Full-Stack Developer'];
+  index = 0;
+
+  private changeText() {
+    const dynamicText = document.querySelector('.dynamic-text') as HTMLElement;
+    const updateText = () => {
+      dynamicText.style.opacity = '0';
+
+      setTimeout(() => {
+        dynamicText.textContent = this.roles[this.index];
+        dynamicText.style.opacity = '1';
+        this.index = (this.index + 1) % this.roles.length;
+      }, 1000);
+
+      setTimeout(updateText, 3000);
+    };
+
+    updateText();
   }
 }

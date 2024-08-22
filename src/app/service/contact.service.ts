@@ -22,7 +22,7 @@ export class ContactService {
       email,
       message,
       subject,
-      to_email: 'marcoteixeira308@gmail.com',
+      to_email: 'no-reply@greenxertz.co.za',
     }).toString();
   
     return await firstValueFrom(
