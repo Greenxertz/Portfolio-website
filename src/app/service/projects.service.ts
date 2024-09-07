@@ -93,11 +93,34 @@ export class ProjectsService {
       projectUrls: ['https://github.com/Dario-Maselli/WebDevEssentials'],
       images: ['/Images/Pictures/projects/webessentials/repo.png'],
     },
+    {
+      id: 5,
+      imageUrl: '/Images/Pictures/projects/SAOnlinemart/homepage.png',
+      title: 'SA Online Mart',
+      summary:
+        'An Ecommerce web app built with the focus on the ASP .Net Framework.',
+      desc: `An ecommerce web app developed as a project for one of my classes in september 2024.
+       The goal of this project was to be completed within a week to see what students were capable of.
+       This project provided valuable experience in development within the ASP .net Framework.`,
+      chips: [
+        'devicon-dotnetcore-plain',
+        'devicon-azuresqldatabase-plain',
+        'devicon-html5-plain-wordmark',
+        'devicon-bootstrap-plain',
+      ],
+      projectUrls: ['https://github.com/Greenxertz/SAOnlineProject1'],
+      images: [
+        '/Images/Pictures/projects/SAOnlinemart/homepage.png',
+        '/Images/Pictures/projects/SAOnlinemart/details.png',
+        '/Images/Pictures/projects/SAOnlinemart/Productdetails.png',
+        '/Images/Pictures/projects/SAOnlinemart/cart.png',
+      ],
+    },
   ];
 
   private prototypes = [
     {
-      id: 5,
+      id: 6,
       imageUrl: '/Images/Pictures/underconstruction.jpg',
       title: 'Solid state management app',
       summary:
@@ -111,7 +134,7 @@ export class ProjectsService {
       images: ['/Images/Pictures/underconstruction.jpg'],
     },
     {
-      id: 6,
+      id: 7,
       imageUrl: '/Images/Pictures/underconstruction.jpg',
       title: 'Solid state website',
       summary:
